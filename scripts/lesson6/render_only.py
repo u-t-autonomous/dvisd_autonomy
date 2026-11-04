@@ -108,10 +108,10 @@ if __name__ == "__main__":
 	##### Tune these parameters! ######################
 	# TODO !!!!
 	# How wide of a range of points do you want to use to predict the wall?
-	angle = 25 # degrees
+	angle = 65 # degrees
 
 	# How far ahead to place the waypoint.
-	lookahead_distance = 1.0 # meters
+	lookahead_distance = 5.75 # meters
 
 	###################################################
 

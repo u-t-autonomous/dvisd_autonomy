@@ -21,18 +21,18 @@ def get_key():
     return ch
 
 # Configuration
-FREQ = 100
-ESC_NEUTRAL = 1580
-ESC_FORWARD = 1650
-CENTER_ANGLE = 100
-STEER_MIN = 50
-STEER_MAX = 140
+FREQ = 50
+ESC_NEUTRAL = 1705
+ESC_FORWARD = 1810
+CENTER_ANGLE = 115
+STEER_MIN = 65
+STEER_MAX = 165
 
 # Initialize
 car = Control(FREQ, ESC_NEUTRAL, ESC_FORWARD, CENTER_ANGLE, STEER_MIN, STEER_MAX)
 
 print("Drive started! Use WASD to move, Q to quit.")
-
+car.stop()
 try:
     while True:
         key = get_key().lower()

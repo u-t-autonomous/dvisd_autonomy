@@ -46,6 +46,9 @@ class LIDAR:
 					min_angle, max_angle = np.inf, -np.inf
 					scan_data = np.zeros(360)
 					for (_, angle, distance_mm) in scan:
+						# subtract 180 to reverse lidar direction
+						angle = angle - 180
+
 						# get angle in degrees
 						scan_angle = min(359, int(angle % 360))
 						# print(scan_angle, distance_mm)

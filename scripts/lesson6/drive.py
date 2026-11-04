@@ -108,10 +108,10 @@ if __name__ == "__main__":
 	##### Tune these parameters! ######################
 	# TODO !!!!
 	# How wide of a range of points do you want to use to predict the wall?
-	angle = 25 # degrees
+	angle = 30 # degrees
 
 	# How far ahead to place the waypoint.
-	lookahead_distance = 1.0 # meters
+	lookahead_distance = 2.75 # meters
 
 	# What car do you have?
 	car = 3
@@ -133,11 +133,11 @@ if __name__ == "__main__":
 	if car in [1,2]:
 		esc_forward_us = 1645
 	else:
-		esc_forward_us = 1660
-	assert esc_forward_us < 1675, "Dont go too fast."
+		esc_forward_us = 1810
+	assert esc_forward_us < 1820, "Dont go too fast."
 	rc_hardware = Control(
 		freq_hz=100,
-		esc_neutral_us=1580,
+		esc_neutral_us=1705,
 		esc_forward_us=esc_forward_us, 
 		neutral_angle=100,
 		steering_min=50,
@@ -146,7 +146,7 @@ if __name__ == "__main__":
 
 	# Set start time, and how long to run the program.
 	wait_time = 5.0 # seconds
-	kill_time = 11.0 # seconds
+	kill_time = 20.0 # seconds
 	start_time = time.time()
 
 	# fetch data in a loop
