@@ -90,8 +90,8 @@ hostname_map = {
 
 
 if __name__ == "__main__":
-    car = 1
-    wifi_type = "ut"
+    car = 3
+    wifi_type = "radio"
     assert wifi_type in ["ut", "radio"]
 
     viz = LidarTopDownVisualizer()

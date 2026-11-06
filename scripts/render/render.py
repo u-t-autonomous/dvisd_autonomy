@@ -323,20 +323,15 @@ class CarVisualizer:
 
         if points_red is not None:
             self.update_pointcloud(points_red, "red")
-        else:
-            self.clear_old_points("red")
 
 
         if points_blue is not None:
             self.update_pointcloud(points_blue, "blue")
-        else:
-            self.clear_old_points("blue")
 
 
         if points_green is not None:
             self.update_pointcloud(points_green, "green")
-        else:
-            self.clear_old_points("green")
+
 
 
         if endpoints is not None:
@@ -358,24 +353,32 @@ class CarVisualizer:
 hostname = {
     1: {
         "ut": "b827eb777a0f.dynamic.utexas.edu",
-        "radio": "192.168.168.11"
+        "radio": "192.168.168.11",
+         "philip": "192.168.0.101"
     },
     2: {
         "ut": "b827eb2f3fa5.dynamic.utexas.edu",
-        "radio": "192.168.168.12"
+        "radio": "192.168.168.12",
+         "philip": "192.168.0.102",
     },
     3: {
         "ut": "b827ebfbf87a.dynamic.utexas.edu",
-        "radio": "192.168.168.13"
+        "radio": "192.168.168.13",
+        "philip": "192.168.0.103"
+    },
+    4: {
+        "ut": "nan",
+        "radio": "nan",
+        "philip": "192.168.0.104"
     },
 }
 
 
 if __name__ == "__main__":
     # Chosen car number, and where we are for deciding on hostname
-    car = 2
-    wifi_type = "ut"
-    assert wifi_type in ["ut", "radio"], "You must select either 'ut' or 'radio'. Case sensitive. "
+    car = 3
+    wifi_type = "philip"
+    assert wifi_type in ["ut", "radio", "philip"], "You must select either 'ut' or 'radio' or 'philip'. Case sensitive. "
 
     # create renderer
     viz = CarVisualizer()
@@ -392,8 +395,7 @@ if __name__ == "__main__":
         msg = receiver.receive()
 
         # Update visualization
-        if len(msg) > 0:
-            viz.update(**msg)
+        viz.update(**msg)
         time.sleep(0.03)
 
 
