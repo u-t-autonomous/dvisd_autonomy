@@ -76,23 +76,26 @@ class LidarTopDownVisualizer:
 hostname_map = {
     1: {
         "ut": "b827eb777a0f.dynamic.utexas.edu",
-        "radio": "192.168.168.11"
+        "radio": "192.168.168.11",
+        "philip": "192.168.0.101"
     },
     2: {
         "ut": "b827eb2f3fa5.dynamic.utexas.edu",
-        "radio": "192.168.168.12"
+        "radio": "192.168.168.12",
+        "philip": "192.168.0.102"
     },
     3: {
         "ut": "b827ebfbf87a.dynamic.utexas.edu",
-        "radio": "192.168.168.13"
+        "radio": "192.168.168.13",
+        "philip": "192.168.0.103"
     },
 }
 
 
 if __name__ == "__main__":
-    car = 3
-    wifi_type = "radio"
-    assert wifi_type in ["ut", "radio"]
+    car = 2
+    wifi_type = "philip"
+    assert wifi_type in ["ut", "radio", "philip"]
 
     viz = LidarTopDownVisualizer()
 

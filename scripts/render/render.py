@@ -376,7 +376,7 @@ hostname = {
 
 if __name__ == "__main__":
     # Chosen car number, and where we are for deciding on hostname
-    car = 3
+    car = 1
     wifi_type = "philip"
     assert wifi_type in ["ut", "radio", "philip"], "You must select either 'ut' or 'radio' or 'philip'. Case sensitive. "
 
